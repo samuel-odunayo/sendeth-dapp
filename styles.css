@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+.content {
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.status {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.status.connected {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+.status.disconnected {
+    background: linear-gradient(135deg, #fa709a, #fee140);
+    color: white;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin: 5px;
+    min-width: 120px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+}
+
+.vote-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.vote-btn {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vote-btn.proposal1 {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.vote-btn.proposal2 {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.balance-display {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance-display h3 {
+    color: #8b4513;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #d2691e;
+}
+
+.transaction-hash {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    word-break: break-all;
+    margin-top: 10px;
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error {
+    background: #ffe6e6;
+    color: #d63031;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #d63031;
+}
+
+.success {
+    background: #e6ffe6;
+    color: #00b894;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #00b894;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .vote-buttons {
+        flex-direction: column;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+}

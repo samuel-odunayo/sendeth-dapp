@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sendeth DApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.1/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 SendETH DApp</h1>
+            <p>Connect wallet, send ETH, and participate in voting</p>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <h2>🔗 Wallet Connection</h2>
+                <div id="connectionStatus" class="status disconnected">
+                    Not connected to wallet
+                </div>
+                <button id="connectBtn" class="btn">Connect MetaMask</button>
+            </div>
+
+            <div class="card" id="balanceSection" style="display: none;">
+                <h2>💰 Account Balance</h2>
+                <div class="balance-display">
+                    <h3>Current Balance</h3>
+                    <div id="accountBalance" class="balance-amount">0.0000 ETH</div>
+                </div>
+                <button id="refreshBalanceBtn" class="btn btn-secondary">Refresh Balance</button>
+            </div>
+
+            <div class="card" id="sendSection" style="display: none;">
+                <h2>💸 Send ETH</h2>
+                <div class="input-group">
+                    <label for="recipientAddress">Recipient Address:</label>
+                    <input type="text" id="recipientAddress" placeholder="0x..." />
+                </div>
+                <div class="input-group">
+                    <label for="ethAmount">Amount (ETH):</label>
+                    <input type="number" id="ethAmount" placeholder="0.01" step="0.001" min="0" />
+                </div>
+                <button id="sendEthBtn" class="btn">Send ETH</button>
+                <div id="sendResult"></div>
+            </div>
+
+            <div class="card" id="votingSection" style="display: none;">
+                <h2>🗳️ Voting Contract</h2>
+                <p><strong>Contract:</strong> 0x35cd167FA931C6c5E07AbB2621846FC35D54baD6</p>
+                <p><strong>Network:</strong> Sepolia Testnet</p>
+                
+                <div class="vote-buttons">
+                    <button id="vote1Btn" class="btn vote-btn proposal1">
+                        Vote for Proposal 1
+                    </button>
+                    <button id="vote2Btn" class="btn vote-btn proposal2">
+                        Vote for Proposal 2
+                    </button>
+                </div>
+                <div id="votingResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
